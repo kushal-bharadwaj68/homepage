@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .navbar-div {
+            background-color: #99272D;
+            padding: 15px 10px;
+            position: fixed;
+            top: 0;
+            z-index: 2;
+        }
+        .home-div {
+            display: flex;
+            align-items: center;
+        }
+        .dark-div {
+            display: flex;
+            align-items: center;
+            margin-top: 2px;
+        }
+        .images-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 65px;
+        }
+        .marque-div {
+            width: 100%;
+            height: 30px;
+            background-color: yellow;
+            margin-top: 10px;
+        }
+        .marque-p {
+            margin-left: 10px;
+        }
+        .boxes-div {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .box1 {
+            color: white;
+            background-color: rgb(232, 107, 107);
+            width: 270px;
+            height: 130px;
+            margin-left: 10px;
+            margin-top: 10px;
+            border: 5px solid white;
+            box-shadow: 3px 2px 20px gray;
+        }
+        .box2 {
+            color: white;
+            background-color: rgb(50, 216, 216);
+            width: 270px;
+            height: 130px;
+            margin-left: 10px;
+            margin-top: 10px;
+            border: 5px solid white;
+            box-shadow: 3px 2px 20px gray;
+        }
+        .box3 {
+            color: white;
+            background-color: rgb(240, 162, 17);
+            width: 270px;
+            height: 130px;
+            margin-left: 10px;
+            margin-top: 10px;
+            border: 5px solid white;
+            box-shadow: 3px 2px 20px gray;
+        }
+        .box4 {
+            color: white;
+            background-color: rgb(34, 213, 34);
+            width: 270px;
+            height: 130px;
+            margin-left: 10px;
+            margin-top: 10px;
+            border: 5px solid white;
+            box-shadow: 3px 2px 20px gray;
+        }
+        .box5 {
+            color: white;
+            background-color: rgb(34, 177, 225);
+            width: 270px;
+            height: 130px;
+            margin-left: 10px;
+            margin-top: 10px;
+            border: 5px solid white;
+            box-shadow: 3px 2px 20px gray;
+        }
+        .box6 {
+            color: white;
+            background-color: rgb(43, 173, 43);
+            width: 270px;
+            height: 130px;
+            margin-left: 10px;
+            margin-top: 10px;
+            border: 5px solid white;
+            box-shadow: 3px 2px 20px gray;
+        }
+        @keyframes bo1 {
+            0% {
+               position: relative;
+               left: -240px;
+            }
+            100% {
+               position: relative;
+               left: 0px;
+            }
+        }
+        @keyframes bo3 {
+            0% {
+               position: relative;
+               left: -240px;
+            }
+            100% {
+               position: relative;
+               left: 0px;
+            }
+        }
+        @keyframes bo5 {
+            0% {
+               position: relative;
+               left: -240px;
+            }
+            100% {
+               position: relative;
+               left: 0px;
+            }
+        }
+        @keyframes bo2 {
+            0% {
+               position: relative;
+               right: -240px;
+            }
+            100% {
+               position: relative;
+               right: 0px;
+            }
+        }
+        @keyframes bo4 {
+            0% {
+               position: relative;
+               right: -240px;
+            }
+            100% {
+               position: relative;
+               right: 0px;
+            }
+        }
+        @keyframes bo6 {
+            0% {
+               position: relative;
+               right: -240px;
+            }
+            100% {
+               position: relative;
+               right: 0px;
+            }
+        }
+        .b1 {
+            animation-name: bo1;
+            animation-duration: 3s;
+            animation-iteration-count: 1;
+        }
+        .b2 {
+            animation-name: bo2;
+            animation-duration: 3s;
+            animation-iteration-count: 1;
+        }
+        .b3 {
+            animation-name: bo3;
+            animation-duration: 3s;
+            animation-iteration-count: 1;
+        }
+        .b4 {
+            animation-name: bo4;
+            animation-duration: 3s;
+            animation-iteration-count: 1;
+        }
+        .b5 {
+            animation-name: bo5;
+            animation-duration: 3s;
+            animation-iteration-count: 1;
+        }
+        .b6 {
+            animation-name: bo6;
+            animation-duration: 3s;
+            animation-iteration-count: 1;
+        }
+        .box-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;  
+            text-align: center;
+            position: relative;
+            top: 20px;
+            font-weight: bold;
+        }
+        .services-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px; 
+        }
+        .services-header {
+            font-weight: bold;
+        }
+        .services-div1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            background-color: white;
+            padding: 15px;
+        }
+        .service-div {
+            color: white;
+            background-color: gray;
+            width: 300px;
+            height: 150px;
+            margin-left: 10px;
+            margin-top: 10px;
+            border: 5px solid white; 
+            box-shadow: 3px 2px 20px gray;
+            text-align: center;
+            position: relative;
+            bottom: 5px;
+        } 
+        .service-div2 {
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            padding: 0;
+            text-align: center;
+        }
+        .arrow-i {
+            display: flex;
+            justify-content: center;
+            align-items: center;  
+            text-align: center;
+            position: relative;
+            top: 50px;
+            font-weight: bold;
+        }
+        .footer-d {
+            width: 100%;
+            height: 40px;
+            text-align: center;
+            color: white;
+            background-color: rgb(66, 63, 63);
+            margin-top: 20px;
+        }
+        .footer-div {
+            color: white;
+            background-color: black;
+            text-align: center;
+            padding: 20px 20px;
+        }
+        .f-image {
+            width: 100px;
+            height: 100px;
+            margin-left: 30px;
+        }
+        .f-images {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          background-color: black;
+          position: relative;
+          bottom: 10px;
+          padding: 10px 10px;
+        }
+        .quote-author {
+               text-align: center;
+               position: relative;
+               top: -200px;
+               font-weight: bold;
+            }
+        @media (min-width: 0px) and (max-width: 479px) {
+            .box {
+               width: 80%;
+            }
+            .service-div {
+               width: 80%;
+            }
+        }
+        @media (min-width: 0px) {
+          /*.court-div {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+          }*/  
+          .quote-div {
+               text-align: center;
+               position: relative;
+               top: 130px;
+               font-weight: bold;
+          }  
+          .quote-author {
+               text-align: center;
+               position: relative;
+               font-weight: bold;
+          }
+          .court-image {
+               width: 100vw;
+               height: 50vh;   
+            }
+            .quote-image {
+               width: 100vw;
+               height: 50vh;   
+            }
+        }
+        @media (min-width: 992px) {
+            .quote-author {
+               text-align: center;
+               position: relative;
+               top: -130px;
+               font-weight: bold;
+            }
+            .home-div {
+               position: absolute;
+               right: 560px;
+               bottom: 15px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+            }
+            .legal-div {
+               position: absolute;
+               right: 420px;
+               bottom: 15px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+            }
+            .about-div {
+               position: absolute;
+               right: 345px;
+               bottom: 15px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+            }
+            .contactus-div {
+               position: absolute;
+               right: 245px;
+               bottom: 15px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+            }
+            .login-div {
+               position: absolute;
+               right: 150px;
+               bottom: 15px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+            }
+            .language-div {
+               position: absolute;
+               right: 70px;
+               bottom: 15px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+            }
+            .icon-div {
+               position: absolute;
+               right: 30px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+            }
+            }
+        @media (min-width: 1050px) {
+            .court-image {
+               width: 55vw;
+               height: 70vh;   
+            }
+            .quote-image {
+               width: 45vw;
+               height: 70vh;   
+            }
+        }
+        @media (min-width: 1450px) {
+            .quote-author {
+               text-align: center;
+               position: relative;
+               font-weight: bold;
+            }
+        }
+        body {
+            background-color: lightgray;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body class = "body1">
+    <nav class="navbar navbar-expand-lg bg-body-teritary">
+        <div class="container-fluid navbar-div">
+          <a class="navbar-brand" style = "color: white;" href="#">e-Court</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item" style = "color: white;">
+                <div class = "home-div">
+                    <i class="fa-solid fa-house fa-lg" style="color: #ffffff;"></i>
+                    <a class="nav-link active" aria-current="page" href="#" style = "color: white; margin-left: 5px;">Home</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown legal-div">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style = "color: white;">
+                  legal Services
+                </a>
+                <ul class="dropdown-menu" style = "background-color: black;">
+                  <li>
+                    <a class="dropdown-item" href="#" style = "color: white;">Action</a>
+                </li>
+                  <li>
+                    <a class="dropdown-item" href="#" style = "color: white;">Another action</a>
+                </li>
+                  <li>
+                    <hr class="dropdown-divider" style = "color: white;">
+                </li>
+                  <li>
+                    <a class="dropdown-item" href="#" style = "color: white;">Something else here</a>
+                </li>
+                </ul>
+              </li>
+              <li class="nav-item" style = "color: white;">
+                <a class="nav-link about-div" href="#" style = "color: white;">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link contactus-div" style = "color: white;">Contact Us</a>
+              </li>
+              <li class="nav-item dropdown login-div">
+                  <i class="fa-solid fa-user fa-lg" style="color: #ffffff;"></i>
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style = "color: white;">
+                    login
+                  </a>
+                <ul class="dropdown-menu" style = "background-color: black;">
+                  <li>
+                    <a class="dropdown-item" href="#" style = "color: white;">Action</a>
+                </li>
+                  <li>
+                    <a class="dropdown-item" href="#" style = "color: white;">Another action</a>
+                </li>
+                  <li>
+                    <hr class="dropdown-divider" style = "color: white;">
+                </li>
+                  <li>
+                    <a class="dropdown-item" href="#" style = "color: white;">Something else here</a>
+                </li>
+                </ul>
+              </li>
+              <li class="nav-item language-div">
+                  <a class="nav-link" style = "color: white;">English</a>
+              </li>
+              <li class="nav-item dark-div icon-div">
+                <i class="fa-solid fa-moon fa-lg" style="color: #ffffff;"></i>
+                <h2 class = "mode-h2" hidden>Dark mode</h2>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class = "images-div">
+        <div class = "court-div">
+            <img class = "court-image" src = "eportalimage.jpg"/>
+        </div>
+        <div class = "quote-div">
+            <h2 class = "quote-image">"There is a higher court than courts of justice and that is the court of conscience. It supercedes all other courts."</h2>
+            <!--<h3 class = "quote-author">Mahatma Gandhi</h3>-->
+        </div>
+      </div>
+      <div class = "marque-div">
+          <p class = "marque-p">Latest News:</p>
+      </div>
+      <div class = "boxes-div">
+         <div class = "box1">
+             <h4 class = "box-header">Number of Wards</h4>
+             <h4 class = "box-header">2 M</h4>
+         </div>
+         <div class = "box2">
+             <h4 class = "box-header">Number of Cases</h4>
+             <h4 class = "box-header">20 M</h4>
+         </div>
+         <div class = "box3">
+             <h4 class = "box-header">Disposed Cases</h4>
+             <h4 class = "box-header">40 M</h4>
+         </div>
+         <div class = "box4">
+             <h4 class = "box-header">Number of Cases in Last Month</h4>
+             <h4 class = "box-header">1.21 M</h4>
+         </div>
+         <div class = "box5">
+             <h4 class = "box-header">Number of Cases Listed Today</h4>
+             <h4 class = "box-header">65.84 K</h4>
+         </div>
+         <div class = "box6">
+             <h4 class = "box-header">High Court Complexes</h4>
+             <h4 class = "box-header">39</h4>
+         </div>
+      </div>
+      <div class = "services-div">
+         <h2 class = "services-header">Our Services</h2>
+      </div>
+      <div class = "service-div2">  
+        <div class = "services-div1">
+          <div class = "service-div">
+            <h4 class = "box-header">Case Status</h4>
+            <i class="fa-solid fa-arrow-right fa-2xl arrow-i"></i>
+          </div>
+          <div class = "service-div">
+            <h4 class = "box-header">Cause List</h4>
+            <i class="fa-solid fa-arrow-right fa-2xl arrow-i"></i>
+          </div>
+          <div class = "service-div">
+            <h4 class = "box-header">e-Judgement</h4>
+            <i class="fa-solid fa-arrow-right fa-2xl arrow-i"></i>
+          </div>
+        </div>
+      </div>
+      <footer>
+          <div class = "footer-d">
+              <h6>Website Policies / Contact Us / Help / Web Information Manager / Feedback</h6>
+          </div>
+          <div class = "footer-div">
+              <h6>Content Owned by eCommittee, Supreme Court of India</h6>
+              <h6>Developed and hosted by National Informatics Centre, Ministry of Electronics & Information Technology, Government of India</h6>
+              <h6>Last Updated: Oct 20, 2023</h6>
+          </div>
+          <div class = "f-images">
+              <div>
+                 <img class = "f-image" src = "https://www.nic.in/wp-content/uploads/2019/11/Logo-SWaaS.png"/>
+              </div>
+              <div>
+                 <img class = "f-image" src = "data:image/png;base64,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"/>
+              </div>
+              <div>
+                 <img class = "f-image" src = "https://upload.wikimedia.org/wikipedia/en/thumb/9/95/Digital_India_logo.svg/1200px-Digital_India_logo.svg.png"/>   
+              </div>
+          </div>
+      </footer>
+      <script>
+          let darkDiv = document.querySelector('.dark-div');
+          let body1 = document.querySelector('.body1');
+          let boxesDiv = document.querySelector('.boxes-div');
+          let box1 = document.querySelector('.box1');
+          let box2 = document.querySelector('.box2');
+          let box3 = document.querySelector('.box3');
+          let box4 = document.querySelector('.box4');
+          let box5 = document.querySelector('.box5');
+          let box6 = document.querySelector('.box6');
+          let b1 = document.querySelector('.b1');
+          let b2 = document.querySelector('.b2');
+          let b3 = document.querySelector('.b3');
+          let b4 = document.querySelector('.b4');
+          let b5 = document.querySelector('.b5');
+          let b6 = document.querySelector('.b6');
+          let quoteImage = document.querySelector('.quote-image');
+          let servicesHeader = document.querySelector('.services-header');
+          let footerDiv = document.querySelector('.footer-div');
+          let fImages = document.querySelector('.f-images'); 
+          darkDiv.addEventListener('click',() => {
+             let mode = document.querySelector('.mode-h2');
+             if (mode.innerHTML == 'Dark mode') {
+                body1.style = 'background-color: black;';
+                quoteImage.style = 'color: white;';
+                servicesHeader.style = 'color: white;';
+                footerDiv.style = 'color: black; background-color: white;';
+                fImages.style = 'color: black; background-color: white;';
+                mode.innerHTML = 'Light mode';
+             }
+             else if (mode.innerHTML == 'Light mode') {
+                body1.style = 'background-color: lightgray;';
+                quoteImage.style = 'color: black;';
+                servicesHeader.style = 'color: black;';
+                footerDiv.style = 'color: white; background-color: black;';
+                fImages.style = 'color: white; background-color: black;';
+                mode.innerHTML = 'Dark mode';
+             }
+          });
+          window.addEventListener('scroll', (event) => {
+             if (window.scrollY >= 100 && window.scrollY <= 956) {
+                 box1.classList.add('b1');
+                 box2.classList.add('b2');
+                 box3.classList.add('b3');
+                 box4.classList.add('b4');
+                 box5.classList.add('b5');
+                 box6.classList.add('b6');
+             }
+             else {
+                 box1.classList.remove('b1');
+                 box2.classList.remove('b2');
+                 box3.classList.remove('b3');
+                 box4.classList.remove('b4');
+                 box5.classList.remove('b5');
+                 box6.classList.remove('b6');
+             }
+          });
+      </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
